@@ -1,6 +1,7 @@
 const readline = require('readline');
 const fs = require('fs');
 const http = require('http');
+const url = require('url')
 
 const html = fs.readFileSync('./Template/index.html', 'utf-8')
 let products = JSON.parse(fs.readFileSync('./Data/products.json', 'utf-8'))
@@ -23,9 +24,10 @@ function replaceHtml(template, product){
 }
 
 const server = http.createServer((request, response) => {
-    let {query, pathname: path} = url.parse(request.url, true)
+    let pathurl = request.url;
+    let {query, pathname: path} = url.parse(pathurl, true);
     //console.log(x);
-    //let path = request.url;
+    //
     
     if(path === '/' || path.toLocaleLowerCase() ==='/home'){
         response.writeHead(200, {
@@ -65,4 +67,4 @@ const server = http.createServer((request, response) => {
         });
         response.end(html.replace('{{%CONTENT%}}', 'Error 404: Page not found!'));
     }
-});
+}).listen(8080)

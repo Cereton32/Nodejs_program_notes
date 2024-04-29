@@ -25,28 +25,28 @@
 
 
 
-// const fs =require('fs')
-// fs.readFile('pratice.txt','utf-8',(err,data)=>{
-//     try{
-//         console.log(data);
-//     }
-//     catch(err){
-//         console.log(err)
-//     }
-// }
+const fs =require('fs')
+fs.readFile('pratice.txt','utf-8',(err,data)=>{
+    try{
+        console.log(data);
+    }
+    catch(err){
+        console.log(err)
+    }
+}
 
-// )
+)
 
-const fs= require('fs')
+// const fs= require('fs')
 
-  const data=fs.readFileSync('pratice.txt','utf-8',(err,data)=>{
-   try{
-    console.log(data)
-   }
-   catch{
-    console.log("error");
-   }
+//   const data=fs.readFileSync('pratice.txt','utf-8',(err,data)=>{
+//    try{
+//     console.log(data)
+//    }
+//    catch{
+//     console.log("error");
+//    }
     
 
-})
-console.log(data)
+// })
+// console.log(data)
